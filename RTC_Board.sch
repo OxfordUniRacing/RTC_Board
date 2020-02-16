@@ -1,0 +1,207 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+NoConn ~ 5900 3900
+NoConn ~ 5900 3600
+NoConn ~ 4900 4000
+$Comp
+L power:GND #PWR0101
+U 1 1 5E49478F
+P 5400 4200
+F 0 "#PWR0101" H 5400 3950 50  0001 C CNN
+F 1 "GND" H 5405 4027 50  0000 C CNN
+F 2 "" H 5400 4200 50  0001 C CNN
+F 3 "" H 5400 4200 50  0001 C CNN
+	1    5400 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Timer_RTC:DS3231MZ U1
+U 1 1 5E493B1A
+P 5400 3800
+F 0 "U1" H 5600 4250 50  0000 C CNN
+F 1 "DS3231MZ" H 5600 4150 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5400 3300 50  0001 C CNN
+F 3 "http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf" H 5400 3200 50  0001 C CNN
+	1    5400 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0102
+U 1 1 5E4984AA
+P 5400 3400
+F 0 "#PWR0102" H 5400 3250 50  0001 C CNN
+F 1 "VCC" H 5415 3573 50  0000 C CNN
+F 2 "" H 5400 3400 50  0001 C CNN
+F 3 "" H 5400 3400 50  0001 C CNN
+	1    5400 3400
+	1    0    0    -1  
+$EndComp
+Text Label 5300 3400 1    50   ~ 0
+VBAT
+Text Label 4900 3600 2    50   ~ 0
+SCL
+Text Label 4900 3700 2    50   ~ 0
+SDA
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 5E4994B9
+P 6500 3700
+F 0 "BT1" H 6618 3841 50  0000 L CNN
+F 1 "CR1220" H 6618 3750 50  0000 L CNN
+F 2 "project:BatteryHolder_Keystone_1056_1x1220" V 6500 3760 50  0001 C CNN
+F 3 "~" V 6500 3760 50  0001 C CNN
+F 4 "Keystone 1056" H 6618 3659 50  0000 L CNN "Part"
+	1    6500 3700
+	1    0    0    -1  
+$EndComp
+Text Label 6500 3500 0    50   ~ 0
+VBAT
+$Comp
+L power:GND #PWR0103
+U 1 1 5E499E01
+P 6500 3800
+F 0 "#PWR0103" H 6500 3550 50  0001 C CNN
+F 1 "GND" H 6505 3627 50  0000 C CNN
+F 2 "" H 6500 3800 50  0001 C CNN
+F 3 "" H 6500 3800 50  0001 C CNN
+	1    6500 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3700 4600 3700
+Wire Wire Line
+	4000 3500 4150 3500
+Wire Wire Line
+	4150 3500 4150 3200
+$Comp
+L Device:R R1
+U 1 1 5E49DF68
+P 4300 3350
+F 0 "R1" H 4370 3396 50  0000 L CNN
+F 1 "4.7k" H 4370 3305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4230 3350 50  0001 C CNN
+F 3 "~" H 4300 3350 50  0001 C CNN
+	1    4300 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5E49E3D0
+P 4600 3350
+F 0 "R2" H 4670 3396 50  0000 L CNN
+F 1 "4.7k" H 4670 3305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4530 3350 50  0001 C CNN
+F 3 "~" H 4600 3350 50  0001 C CNN
+	1    4600 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 3500 4300 3600
+Wire Wire Line
+	4600 3500 4600 3700
+Connection ~ 4600 3700
+Wire Wire Line
+	4600 3700 4000 3700
+$Comp
+L power:VCC #PWR0104
+U 1 1 5E49F259
+P 4150 3200
+F 0 "#PWR0104" H 4150 3050 50  0001 C CNN
+F 1 "VCC" H 4165 3373 50  0000 C CNN
+F 2 "" H 4150 3200 50  0001 C CNN
+F 3 "" H 4150 3200 50  0001 C CNN
+	1    4150 3200
+	1    0    0    -1  
+$EndComp
+Connection ~ 4150 3200
+Wire Wire Line
+	4000 3600 4300 3600
+Wire Wire Line
+	4150 3200 4300 3200
+$Comp
+L Connector_Generic:Conn_01x01 J1
+U 1 1 5E4A270F
+P 3800 3500
+F 0 "J1" H 3879 3496 50  0000 L CNN
+F 1 "Conn_01x01" H 3718 3366 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 3800 3500 50  0001 C CNN
+F 3 "~" H 3800 3500 50  0001 C CNN
+	1    3800 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 5E4A33B8
+P 3800 3600
+F 0 "J2" H 3879 3596 50  0000 L CNN
+F 1 "Conn_01x01" H 3718 3466 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 3800 3600 50  0001 C CNN
+F 3 "~" H 3800 3600 50  0001 C CNN
+	1    3800 3600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J3
+U 1 1 5E4A355B
+P 3800 3700
+F 0 "J3" H 3879 3696 50  0000 L CNN
+F 1 "Conn_01x01" H 3718 3566 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 3800 3700 50  0001 C CNN
+F 3 "~" H 3800 3700 50  0001 C CNN
+	1    3800 3700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J4
+U 1 1 5E4A614E
+P 3800 3800
+F 0 "J4" H 3879 3796 50  0000 L CNN
+F 1 "Conn_01x01" H 3718 3666 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 3800 3800 50  0001 C CNN
+F 3 "~" H 3800 3800 50  0001 C CNN
+	1    3800 3800
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5E4A6298
+P 4000 3800
+F 0 "#PWR0105" H 4000 3550 50  0001 C CNN
+F 1 "GND" V 4005 3672 50  0000 R CNN
+F 2 "" H 4000 3800 50  0001 C CNN
+F 3 "" H 4000 3800 50  0001 C CNN
+	1    4000 3800
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4300 3200
+Connection ~ 4300 3600
+Wire Wire Line
+	4300 3600 4900 3600
+Wire Wire Line
+	4300 3200 4600 3200
+Text Notes 3350 3625 0    50   ~ 0
+PD28
+Text Notes 3350 3725 0    50   ~ 0
+PD27
+Text Notes 3350 3525 0    50   ~ 0
+3.3V
+Text Notes 3350 3825 0    50   ~ 0
+GND
+Text Notes 3250 3725 2    50   ~ 0
+TWD2
+Text Notes 3250 3625 2    50   ~ 0
+TWCK2
+$EndSCHEMATC
